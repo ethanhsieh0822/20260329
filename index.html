@@ -7,278 +7,294 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="2575.7">
   <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="zh-TW"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;筷炒 | KUAI CHAO LOTTERY&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--primary-color: #1f244d;<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">      </span>--secondary-color: #dfdacb;<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">      </span>--accent-red: #e63946; <span class="Apple-converted-space">   </span></p>
-<p class="p1"><span class="Apple-converted-space">      </span>--overlay: rgba(31, 36, 77, 0.9);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>min-height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: var(--primary-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.museum-card {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--secondary-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 330px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 90%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 50px 100px rgba(0,0,0,0.6);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(255, 255, 255, 0.1);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 40px 25px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.logo-container { margin-bottom: 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.logo-img { width: 130px; height: auto; display: block; margin: 0 auto; mix-blend-mode: multiply; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.slogan { font-size: 15px; font-weight: 800; line-height: 1.6; letter-spacing: 1.5px; color: var(--primary-color); margin-bottom: 25px; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* 按鈕樣式 */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#drawBtn {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 18px 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: var(--primary-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--secondary-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: all 0.2s;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>#drawBtn:disabled { background-color: rgba(31, 36, 77, 0.2); color: rgba(31, 36, 77, 0.4); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* === 閃爍免責聲明 === */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@keyframes breath {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>0% { opacity: 0.3; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>50% { opacity: 1; color: var(--accent-red); }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>100% { opacity: 0.3; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.legal-notice {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.5;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--primary-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>animation: breath 2.5s infinite ease-in-out;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* 結果顯示區 */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.result-container {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>min-height: 240px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.dot-loader { display: none; gap: 6px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.dot { width: 8px; height: 8px; background: var(--primary-color); border-radius: 50%; animation: dotPulse 0.6s infinite alternate; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@keyframes dotPulse { from { transform: scale(0.6); opacity: 0.2; } to { transform: scale(1.1); opacity: 1; } }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* 中獎標題 */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.win-title { color: var(--accent-red); font-size: 28px; font-weight: 900; letter-spacing: 4px; animation: textBlink 0.5s step-end infinite; margin-bottom: 12px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@keyframes textBlink { 50% { opacity: 0; } }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* 未中獎標題 */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.lose-title { color: #555; font-size: 24px; font-weight: 900; letter-spacing: 2px; margin-bottom: 12px; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.prize-photo { width: 100%; height: 170px; background-size: cover; background-position: center; border: 2px solid var(--primary-color); margin-bottom: 12px; box-shadow: 6px 6px 0 rgba(31,36,77,0.1); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.prize-name { font-size: 16px; font-weight: 700; border-bottom: 2px solid var(--primary-color); padding-bottom: 4px; color: var(--primary-color); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.lose-text { font-size: 15px; color: #777; font-weight: 400; line-height: 1.8; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* 社群按鈕 */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.social-footer { width: 100%; margin-top: 25px; display: flex; gap: 8px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.social-btn {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex: 1; padding: 10px 0; background-color: transparent; color: var(--primary-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none; font-size: 10px; font-weight: 800; border: 1.5px solid var(--primary-color); transition: 0.2s; text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.social-btn:hover { background-color: var(--primary-color); color: var(--secondary-color); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* 二次確認彈窗 */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.modal-overlay {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: fixed;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>top: 0; left: 0; width: 100%; height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--overlay);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index: 1000;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.modal-content {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--secondary-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 280px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid white;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 20px 50px rgba(0,0,0,0.3);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.modal-content h3 { font-size: 18px; margin-bottom: 15px; color: var(--primary-color); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.modal-content p { font-size: 13px; line-height: 1.6; color: var(--primary-color); margin-bottom: 25px; opacity: 0.8; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.confirm-btn {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--primary-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--secondary-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 2px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cancel-btn {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--primary-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: underline;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0.6;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div class="museum-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="logo-container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;img src="https://i.postimg.cc/FRT3kRhW/kuai-chao-KUAI-CHAO-RGB-heng-shi.jpg" class="logo-img" alt="筷炒 Logo"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="slogan" id="sloganText"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>試試你的好手氣！&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>雙倍份量蒜蓉蒸蝦等你拿！</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;button id="drawBtn"&gt;START&lt;/button&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="legal-notice" id="legalNotice"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>每人每桌僅可參加一次&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>如有任何問題筷炒擁有最終解釋之權力</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="result-container" id="resultWrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="dot-loader" id="loader"&gt;&lt;div class="dot"&gt;&lt;/div&gt;&lt;div class="dot"&gt;&lt;/div&gt;&lt;div class="dot"&gt;&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="displayContent"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="social-footer"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://www.facebook.com/KUAICHAO.TAIPEI/photos" target="_blank" class="social-btn"&gt;FB / FACEBOOK&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://www.instagram.com/kuaichao.taipei/" target="_blank" class="social-btn"&gt;IG / INSTAGRAM&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div class="modal-overlay" id="confirmModal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="modal-content"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3&gt;確認參與抽獎&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;我了解每人每桌僅限參加一次，並願意接受抽獎結果。若中獎將於本次消費時兌換使用。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="confirm-btn" id="finalGo"&gt;我同意並開始抽獎&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="cancel-btn" id="cancelGo"&gt;返回&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const btn = document.getElementById('drawBtn');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const modal = document.getElementById('confirmModal');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const finalGo = document.getElementById('finalGo');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const cancelGo = document.getElementById('cancelGo');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const loader = document.getElementById('loader');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const display = document.getElementById('displayContent');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const slogan = document.getElementById('sloganText');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const legal = document.getElementById('legalNotice');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// 本地儲存金鑰（更新版本以利重新測試）</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const STORAGE_KEY = 'kc_final_v5';</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>const pastResult = localStorage.getItem(STORAGE_KEY);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>if (pastResult) {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>lockUI(pastResult);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>btn.addEventListener('click', () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>modal.style.display = 'flex';</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>cancelGo.addEventListener('click', () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>modal.style.display = 'none';</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>finalGo.addEventListener('click', () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>modal.style.display = 'none';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>startLottery();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function startLottery() {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>btn.disabled = true;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>btn.textContent = "PROCESSING...";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>slogan.style.display = "none";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>legal.style.display = "none";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display.innerHTML = "";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>loader.style.display = "flex";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// 20% 中獎機率</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const isWin = Math.random() &lt; 0.2;<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>const result = isWin ? "WIN" : "LOSE";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>setTimeout(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>loader.style.display = "none";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>localStorage.setItem(STORAGE_KEY, result);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>renderFinal(result);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>btn.textContent = "FINISHED";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}, 1500);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function lockUI(res) {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>slogan.style.display = "none";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>legal.style.display = "none";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>renderFinal(res);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>btn.disabled = true;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>btn.textContent = "FINISHED";</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function renderFinal(res) {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if (res === "WIN") {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display.innerHTML = `</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="win-title"&gt;中獎 / WIN&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="prize-photo" style="background-image: url('https://i.postimg.cc/rw54Cg8S/suan-rong-zheng-xia.jpg')"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="prize-name"&gt;雙倍份量的蒜蓉蒸蝦&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>`;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display.innerHTML = `</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="lose-title"&gt;未中獎&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="lose-text"&gt;感謝您的參與&lt;br&gt;祝您用餐愉快&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>`;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta http-equiv="Content-Style-Type" content="text/css"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="Generator" content="Cocoa HTML Writer"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="CocoaVersion" content="2575.7"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style type="text/css"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&amp;lt;html lang="zh-TW"&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&amp;lt;head&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;meta charset="UTF-8"&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;title&amp;gt;筷炒 | KUAI CHAO LOTTERY&amp;lt;/title&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;style&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;:root {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;--primary-color: #1f244d;&lt;span class="Apple-converted-space"&gt; &lt;/span&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;--secondary-color: #dfdacb;&lt;span class="Apple-converted-space"&gt; &lt;/span&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;--accent-red: #e63946; &lt;span class="Apple-converted-space"&gt;   &lt;/span&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;--overlay: rgba(31, 36, 77, 0.9);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;body {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;margin: 0;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;min-height: 100vh;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;display: flex;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;justify-content: center;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;align-items: center;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;background-color: var(--primary-color);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;padding: 20px 0;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.museum-card {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;background: var(--secondary-color);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;width: 330px;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;max-width: 90%;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;text-align: center;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;box-shadow: 0 50px 100px rgba(0,0,0,0.6);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;position: relative;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;border: 1px solid rgba(255, 255, 255, 0.1);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;display: flex;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;flex-direction: column;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;padding: 40px 25px;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.logo-container { margin-bottom: 20px; }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.logo-img { width: 130px; height: auto; display: block; margin: 0 auto; mix-blend-mode: multiply; }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.slogan { font-size: 15px; font-weight: 800; line-height: 1.6; letter-spacing: 1.5px; color: var(--primary-color); margin-bottom: 25px; }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;/* 按鈕樣式 */&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;#drawBtn {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;width: 100%;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;padding: 18px 0;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;background-color: var(--primary-color);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;color: var(--secondary-color);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;border: none;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;font-size: 16px;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;font-weight: 900;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;letter-spacing: 5px;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;cursor: pointer;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;transition: all 0.2s;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;#drawBtn:disabled { background-color: rgba(31, 36, 77, 0.2); color: rgba(31, 36, 77, 0.4); }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;/* === 閃爍免責聲明 === */&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;@keyframes breath {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;0% { opacity: 0.3; }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;50% { opacity: 1; color: var(--accent-red); }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;100% { opacity: 0.3; }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.legal-notice {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;margin-top: 15px;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;font-size: 11px;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;font-weight: 700;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;line-height: 1.5;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;color: var(--primary-color);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;animation: breath 2.5s infinite ease-in-out;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;/* 結果顯示區 */&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.result-container {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;margin-top: 15px;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;min-height: 240px;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;display: flex;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;flex-direction: column;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;justify-content: center;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;align-items: center;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.dot-loader { display: none; gap: 6px; }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.dot { width: 8px; height: 8px; background: var(--primary-color); border-radius: 50%; animation: dotPulse 0.6s infinite alternate; }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;@keyframes dotPulse { from { transform: scale(0.6); opacity: 0.2; } to { transform: scale(1.1); opacity: 1; } }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;/* 中獎標題 */&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.win-title { color: var(--accent-red); font-size: 28px; font-weight: 900; letter-spacing: 4px; animation: textBlink 0.5s step-end infinite; margin-bottom: 12px; }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;@keyframes textBlink { 50% { opacity: 0; } }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;/* 未中獎標題 */&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.lose-title { color: #555; font-size: 24px; font-weight: 900; letter-spacing: 2px; margin-bottom: 12px; }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.prize-photo { width: 100%; height: 170px; background-size: cover; background-position: center; border: 2px solid var(--primary-color); margin-bottom: 12px; box-shadow: 6px 6px 0 rgba(31,36,77,0.1); }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.prize-name { font-size: 16px; font-weight: 700; border-bottom: 2px solid var(--primary-color); padding-bottom: 4px; color: var(--primary-color); }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.lose-text { font-size: 15px; color: #777; font-weight: 400; line-height: 1.8; }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;/* 社群按鈕 */&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.social-footer { width: 100%; margin-top: 25px; display: flex; gap: 8px; }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.social-btn {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;flex: 1; padding: 10px 0; background-color: transparent; color: var(--primary-color);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;text-decoration: none; font-size: 10px; font-weight: 800; border: 1.5px solid var(--primary-color); transition: 0.2s; text-align: center;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.social-btn:hover { background-color: var(--primary-color); color: var(--secondary-color); }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;/* 二次確認彈窗 */&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.modal-overlay {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;display: none;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;position: fixed;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;top: 0; left: 0; width: 100%; height: 100%;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;background: var(--overlay);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;z-index: 1000;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;justify-content: center;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;align-items: center;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.modal-content {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;background: var(--secondary-color);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;width: 280px;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;padding: 30px;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;text-align: center;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;border: 1px solid white;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;box-shadow: 0 20px 50px rgba(0,0,0,0.3);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.modal-content h3 { font-size: 18px; margin-bottom: 15px; color: var(--primary-color); }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.modal-content p { font-size: 13px; line-height: 1.6; color: var(--primary-color); margin-bottom: 25px; opacity: 0.8; }&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.confirm-btn {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;width: 100%;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;padding: 12px 0;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;background: var(--primary-color);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;color: var(--secondary-color);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;border: none;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;font-weight: 900;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;cursor: pointer;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;letter-spacing: 2px;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;margin-bottom: 15px;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;.cancel-btn {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;font-size: 11px;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;color: var(--primary-color);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;text-decoration: underline;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;cursor: pointer;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;opacity: 0.6;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;/style&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&amp;lt;/head&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&amp;lt;body&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&amp;lt;div class="museum-card"&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;div class="logo-container"&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;img src="https://i.postimg.cc/FRT3kRhW/kuai-chao-KUAI-CHAO-RGB-heng-shi.jpg" class="logo-img" alt="筷炒 Logo"&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;div class="slogan" id="sloganText"&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;試試你的好手氣！&amp;lt;br&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;雙倍份量蒜蓉蒸蝦等你拿！&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;button id="drawBtn"&amp;gt;START&amp;lt;/button&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;div class="legal-notice" id="legalNotice"&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;每人每桌僅可參加一次&amp;lt;br&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;如有任何問題筷炒擁有最終解釋之權力&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;div class="result-container" id="resultWrap"&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;div class="dot-loader" id="loader"&amp;gt;&amp;lt;div class="dot"&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class="dot"&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class="dot"&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;div id="displayContent"&amp;gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;div class="social-footer"&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;a href="https://www.facebook.com/KUAICHAO.TAIPEI/photos" target="_blank" class="social-btn"&amp;gt;FB / FACEBOOK&amp;lt;/a&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;a href="https://www.instagram.com/kuaichao.taipei/" target="_blank" class="social-btn"&amp;gt;IG / INSTAGRAM&amp;lt;/a&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&amp;lt;div class="modal-overlay" id="confirmModal"&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;div class="modal-content"&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;h3&amp;gt;確認參與抽獎&amp;lt;/h3&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;p&amp;gt;我了解每人每桌僅限參加一次，並願意接受抽獎結果。若中獎將於本次消費時兌換使用。&amp;lt;/p&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;button class="confirm-btn" id="finalGo"&amp;gt;我同意並開始抽獎&amp;lt;/button&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&amp;lt;div class="cancel-btn" id="cancelGo"&amp;gt;返回&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&amp;lt;script&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;const btn = document.getElementById('drawBtn');&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;const modal = document.getElementById('confirmModal');&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;const finalGo = document.getElementById('finalGo');&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;const cancelGo = document.getElementById('cancelGo');&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;const loader = document.getElementById('loader');&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;const display = document.getElementById('displayContent');&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;const slogan = document.getElementById('sloganText');&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;const legal = document.getElementById('legalNotice');&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;// 本地儲存金鑰（更新版本以利重新測試）&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;const STORAGE_KEY = 'kc_final_v5';&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;const pastResult = localStorage.getItem(STORAGE_KEY);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;if (pastResult) {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;lockUI(pastResult);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;btn.addEventListener('click', () =&amp;gt; {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;modal.style.display = 'flex';&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;});&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;cancelGo.addEventListener('click', () =&amp;gt; {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;modal.style.display = 'none';&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;});&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;finalGo.addEventListener('click', () =&amp;gt; {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;modal.style.display = 'none';&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;startLottery();&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;});&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;function startLottery() {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;btn.disabled = true;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;btn.textContent = "PROCESSING...";&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;slogan.style.display = "none";&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;legal.style.display = "none";&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;display.innerHTML = "";&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;loader.style.display = "flex";&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;// 20% 中獎機率&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;const isWin = Math.random() &amp;lt; 0.2;&lt;span class="Apple-converted-space"&gt; &lt;/span&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;const result = isWin ? "WIN" : "LOSE";&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;setTimeout(() =&amp;gt; {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;loader.style.display = "none";&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;localStorage.setItem(STORAGE_KEY, result);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;renderFinal(result);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;btn.textContent = "FINISHED";&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}, 1500);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;function lockUI(res) {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;slogan.style.display = "none";&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;legal.style.display = "none";&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;renderFinal(res);&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;btn.disabled = true;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;btn.textContent = "FINISHED";&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;function renderFinal(res) {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;if (res === "WIN") {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;display.innerHTML = `&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;&amp;lt;div class="win-title"&amp;gt;中獎 / WIN&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;&amp;lt;div class="prize-photo" style="background-image: url('https://i.postimg.cc/rw54Cg8S/suan-rong-zheng-xia.jpg')"&amp;gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;&amp;lt;div class="prize-name"&amp;gt;雙倍份量的蒜蓉蒸蝦&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;`;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;} else {&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;display.innerHTML = `&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;&amp;lt;div class="lose-title"&amp;gt;未中獎&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;&amp;lt;div class="lose-text"&amp;gt;感謝您的參與&amp;lt;br&amp;gt;祝您用餐愉快&amp;lt;/div&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;      &lt;/span&gt;`;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&lt;span class="Apple-converted-space"&gt;  &lt;/span&gt;}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&amp;lt;/script&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&amp;lt;/body&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="p1"&gt;&amp;lt;/html&amp;gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
 </body>
 </html>
