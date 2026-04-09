@@ -13,31 +13,15 @@
     }
 
     body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: var(--primary-color);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      overflow: hidden;
-      color: var(--primary-color);
+      margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center;
+      background-color: var(--primary-color); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      overflow: hidden; color: var(--primary-color);
     }
 
     .museum-card {
-      background: var(--secondary-color);
-      width: 90%;
-      max-width: 340px;
-      height: 85vh;
-      max-height: 550px;
-      text-align: center;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.6);
-      position: relative;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      flex-direction: column;
-      padding: 25px;
-      box-sizing: border-box;
+      background: var(--secondary-color); width: 90%; max-width: 340px; height: 85vh; max-height: 550px;
+      text-align: center; box-shadow: 0 40px 80px rgba(0,0,0,0.6); position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.1); display: flex; flex-direction: column; padding: 25px; box-sizing: border-box;
     }
 
     .card-header { flex: 0 0 auto; margin-bottom: 10px; }
@@ -47,45 +31,44 @@
     .scene-container { flex: 1 1 auto; display: none; flex-direction: column; justify-content: center; align-items: center; width: 100%; position: relative; }
     .scene-active { display: flex; }
 
-    /* 入口 */
     .promo-img { max-width: 85%; height: auto; border-radius: 6px; border: 2px solid var(--primary-color); box-shadow: 4px 4px 0 rgba(31,36,77,0.1); margin-bottom: 25px; }
     #drawBtn { width: 100%; padding: 18px 0; background-color: var(--primary-color); color: var(--secondary-color); border: none; font-size: 16px; font-weight: 900; letter-spacing: 5px; cursor: pointer; }
 
     @keyframes breath { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; color: var(--accent-red); } }
     .legal-notice { margin-top: 15px; font-size: 11px; font-weight: 700; color: var(--primary-color); animation: breath 2.5s infinite ease-in-out; }
 
-    /* 轉盤 */
     .wheel-stage { width: 230px; height: 230px; position: relative; }
     .wheel-canvas {
       width: 100%; height: 100%; border-radius: 50%; border: 6px solid var(--primary-color); box-sizing: border-box;
-      background: conic-gradient(
-        var(--primary-color) 0deg 45deg, var(--secondary-color) 45deg 90deg,
-        var(--primary-color) 90deg 135deg, var(--secondary-color) 135deg 180deg,
-        var(--primary-color) 180deg 225deg, var(--secondary-color) 225deg 270deg,
-        var(--primary-color) 270deg 315deg, var(--secondary-color) 315deg 360deg
-      );
-      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-      transition: transform 4s cubic-bezier(0.15, 0, 0.15, 1);
+      background: conic-gradient(var(--primary-color) 0deg 45deg, var(--secondary-color) 45deg 90deg, var(--primary-color) 90deg 135deg, var(--secondary-color) 135deg 180deg, var(--primary-color) 180deg 225deg, var(--secondary-color) 225deg 270deg, var(--primary-color) 270deg 315deg, var(--secondary-color) 315deg 360deg);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3); transition: transform 4s cubic-bezier(0.15, 0, 0.15, 1);
     }
     .wheel-pointer { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 18px solid transparent; border-right: 18px solid transparent; border-top: 35px solid var(--accent-red); z-index: 10; }
     .wheel-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 26px; height: 26px; background: var(--accent-red); border-radius: 50%; border: 4px solid var(--secondary-color); }
 
-    /* 結果：極大化字級 */
     @keyframes textBlink { 50% { opacity: 0; } }
-    .result-content { width: 100%; padding: 10px; }
     .win-title { color: var(--accent-red); font-size: 42px; font-weight: 900; letter-spacing: 4px; animation: textBlink 0.6s step-end infinite; margin-bottom: 25px; line-height: 1.2; }
     .prize-name { font-size: 24px; font-weight: 900; color: var(--primary-color); line-height: 1.6; border-top: 3px solid var(--primary-color); border-bottom: 3px solid var(--primary-color); padding: 20px 0; margin: 0 10px; }
-    
     .lose-title { color: #555; font-size: 38px; font-weight: 900; margin-bottom: 20px; }
     .lose-text { font-size: 18px; color: #777; font-weight: 700; line-height: 1.8; }
 
     .social-footer { flex: 0 0 auto; margin-top: 20px; display: flex; gap: 8px; }
     .social-btn { flex: 1; padding: 12px 0; background-color: transparent; color: var(--primary-color); text-decoration: none; font-size: 11px; font-weight: 800; border: 1.5px solid var(--primary-color); text-align: center; }
 
+    /* Modal */
     .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--overlay); z-index: 1000; justify-content: center; align-items: center; }
-    .modal-content { background: var(--secondary-color); width: 85%; max-width: 290px; padding: 35px; text-align: center; border: 1px solid white; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
-    .confirm-btn { width: 100%; padding: 14px 0; background: var(--primary-color); color: var(--secondary-color); border: none; font-weight: 900; letter-spacing: 2px; margin-bottom: 15px; }
-    .cancel-btn { font-size: 12px; color: var(--primary-color); text-decoration: underline; opacity: 0.6; }
+    .modal-content { background: var(--secondary-color); width: 85%; max-width: 300px; padding: 25px; text-align: center; border: 1px solid white; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+    .modal-content h3 { margin-top: 0; color: var(--primary-color); font-size: 18px; margin-bottom: 12px; }
+    .modal-content p { font-size: 14px; line-height: 1.6; color: var(--primary-color); text-align: justify; margin-bottom: 15px; font-weight: 500; }
+    
+    .agree-wrap { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; cursor: pointer; text-align: left; justify-content: center; }
+    .agree-wrap input { width: 18px; height: 18px; flex-shrink: 0; }
+    .agree-wrap span { font-size: 14px; font-weight: 800; color: var(--primary-color); }
+
+    .confirm-btn { width: 100%; padding: 15px 0; background: #ccc; color: #fff; border: none; font-weight: 900; letter-spacing: 2px; margin-bottom: 15px; cursor: not-allowed; transition: 0.3s; }
+    .confirm-btn.active { background: var(--primary-color); color: var(--secondary-color); cursor: pointer; }
+    
+    .cancel-btn { font-size: 12px; color: var(--primary-color); text-decoration: underline; opacity: 0.6; cursor: pointer; }
   </style>
 </head>
 <body>
@@ -123,9 +106,15 @@
 
 <div class="modal-overlay" id="confirmModal">
   <div class="modal-content">
-    <h3>確認參與鑑定</h3>
-    <p>我了解每人每桌僅限參加一次，並願意接受鑑定結果。若獲得優惠將於本次消費時兌換使用。</p>
-    <button class="confirm-btn" id="finalGo">我同意並開始</button>
+    <h3>【活動約定】</h3>
+    <p>感謝參與！按下同意即表示接受結果（每桌限一次）。本活動純屬娛樂性質，不作為退換菜之依據。所獲優惠將於本次消費折抵。</p>
+    
+    <label class="agree-wrap">
+      <input type="checkbox" id="agreeCheck">
+      <span>我同意以上條款</span>
+    </label>
+
+    <button class="confirm-btn" id="finalGo" disabled>讀取中 (3s)</button>
     <div class="cancel-btn" id="cancelGo">返回</div>
   </div>
 </div>
@@ -136,15 +125,61 @@
   const sceneEntry = document.getElementById('sceneEntry');
   const sceneWheel = document.getElementById('sceneWheel');
   const sceneResult = document.getElementById('sceneResult');
+  const confirmBtn = document.getElementById('finalGo');
+  const agreeCheck = document.getElementById('agreeCheck');
 
-  const STORAGE_KEY = 'kuaichao_lotto_final_v11';
+  const STORAGE_KEY = 'kuaichao_lotto_final_v16';
 
-  const pastResult = localStorage.getItem(STORAGE_KEY);
-  if (pastResult) { switchScene('result'); renderFinal(pastResult); }
+  if (localStorage.getItem(STORAGE_KEY)) { switchScene('result'); renderFinal(localStorage.getItem(STORAGE_KEY)); }
 
-  document.getElementById('drawBtn').addEventListener('click', () => { document.getElementById('confirmModal').style.display = 'flex'; });
-  document.getElementById('cancelGo').addEventListener('click', () => { document.getElementById('confirmModal').style.display = 'none'; });
-  document.getElementById('finalGo').addEventListener('click', () => {
+  document.getElementById('drawBtn').addEventListener('click', () => { 
+    document.getElementById('confirmModal').style.display = 'flex'; 
+    startCountdown();
+  });
+
+  document.getElementById('cancelGo').addEventListener('click', () => { 
+    document.getElementById('confirmModal').style.display = 'none'; 
+    resetModal();
+  });
+
+  let canClick = false;
+  function updateBtnState() {
+    if (agreeCheck.checked && canClick) {
+      confirmBtn.disabled = false;
+      confirmBtn.classList.add('active');
+      confirmBtn.textContent = "確定並開始";
+    } else {
+      confirmBtn.disabled = true;
+      confirmBtn.classList.remove('active');
+    }
+  }
+
+  agreeCheck.addEventListener('change', updateBtnState);
+
+  function startCountdown() {
+    let sec = 3;
+    canClick = false;
+    confirmBtn.textContent = `請稍候 (${sec}s)`;
+    const timer = setInterval(() => {
+      sec--;
+      if (sec > 0) {
+        confirmBtn.textContent = `請稍候 (${sec}s)`;
+      } else {
+        clearInterval(timer);
+        canClick = true;
+        updateBtnState();
+        if (!agreeCheck.checked) confirmBtn.textContent = "請勾選同意";
+      }
+    }, 1000);
+  }
+
+  function resetModal() {
+    agreeCheck.checked = false;
+    confirmBtn.disabled = true;
+    confirmBtn.classList.remove('active');
+  }
+
+  confirmBtn.addEventListener('click', () => {
     document.getElementById('confirmModal').style.display = 'none';
     switchScene('wheel');
     startWheelAnimation();
@@ -159,11 +194,10 @@
 
   function startWheelAnimation() {
     const rand = Math.random() * 100;
-    let result = (rand < 10) ? "TRIPLE" : (rand < 40) ? "DOUBLE" : (rand < 70) ? "DISCOUNT" : "ORIGINAL";
-    const totalRotation = 7200 + Math.floor(Math.random() * 360); // 增加圈數至20圈
-
+    // 5% 3倍, 30% 2倍, 40% 50元, 25% 原價
+    let result = (rand < 5) ? "TRIPLE" : (rand < 35) ? "DOUBLE" : (rand < 75) ? "DISCOUNT" : "ORIGINAL";
+    const totalRotation = 7200 + Math.floor(Math.random() * 360); 
     setTimeout(() => { wheelBody.style.transform = `rotate(${totalRotation}deg)`; }, 100);
-
     setTimeout(() => {
       localStorage.setItem(STORAGE_KEY, result);
       renderFinal(result);
@@ -179,7 +213,6 @@
       case "DISCOUNT": title = "中獎 / WIN"; name = "塔香炒蛤蠣<br>現折 50 元！"; break;
       case "ORIGINAL": title = "未中獎"; name = "原價計費"; isWin = false; break;
     }
-
     if (isWin) {
       display.innerHTML = `<div class="win-title">${title}</div><div class="prize-name">${name}</div>`;
     } else {
