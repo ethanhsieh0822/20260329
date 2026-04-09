@@ -59,7 +59,7 @@
     .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--overlay); z-index: 1000; justify-content: center; align-items: center; }
     .modal-content { background: var(--secondary-color); width: 85%; max-width: 300px; padding: 25px; text-align: center; border: 1px solid white; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
     .modal-content h3 { margin-top: 0; color: var(--primary-color); font-size: 18px; margin-bottom: 12px; }
-    .modal-content p { font-size: 14px; line-height: 1.6; color: var(--primary-color); text-align: justify; margin-bottom: 15px; font-weight: 500; }
+    .modal-content p { font-size: 14px; line-height: 1.6; color: var(--primary-color); text-align: justify; margin-bottom: 15px; font-weight: 600; }
     
     .agree-wrap { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; cursor: pointer; text-align: left; justify-content: center; }
     .agree-wrap input { width: 18px; height: 18px; flex-shrink: 0; }
@@ -107,14 +107,14 @@
 <div class="modal-overlay" id="confirmModal">
   <div class="modal-content">
     <h3>【活動約定】</h3>
-    <p>感謝參與！按下同意即表示接受結果（每桌限一次）。本活動純屬娛樂性質，不作為退換菜之依據。所獲優惠將於本次消費折抵。</p>
+    <p>按下同意即代表每桌參與乙次，並接受結果。餐點已同步進入製作流程，結果產生後，原訂單內容恕不接受退換。 優惠將於本次消費即時抵用。</p>
     
     <label class="agree-wrap">
       <input type="checkbox" id="agreeCheck">
       <span>我同意以上條款</span>
     </label>
 
-    <button class="confirm-btn" id="finalGo" disabled>讀取中 (3s)</button>
+    <button class="confirm-btn" id="finalGo" disabled>請稍候 (3s)</button>
     <div class="cancel-btn" id="cancelGo">返回</div>
   </div>
 </div>
@@ -128,7 +128,8 @@
   const confirmBtn = document.getElementById('finalGo');
   const agreeCheck = document.getElementById('agreeCheck');
 
-  const STORAGE_KEY = 'kuaichao_lotto_final_v16';
+  // 更新 STORAGE_KEY 確保最新版本生效
+  const STORAGE_KEY = 'kuaichao_lotto_final_v17';
 
   if (localStorage.getItem(STORAGE_KEY)) { switchScene('result'); renderFinal(localStorage.getItem(STORAGE_KEY)); }
 
@@ -194,7 +195,7 @@
 
   function startWheelAnimation() {
     const rand = Math.random() * 100;
-    // 5% 3倍, 30% 2倍, 40% 50元, 25% 原價
+    // 機率：5% 3倍, 30% 2倍, 40% 50元, 25% 原價
     let result = (rand < 5) ? "TRIPLE" : (rand < 35) ? "DOUBLE" : (rand < 75) ? "DISCOUNT" : "ORIGINAL";
     const totalRotation = 7200 + Math.floor(Math.random() * 360); 
     setTimeout(() => { wheelBody.style.transform = `rotate(${totalRotation}deg)`; }, 100);
