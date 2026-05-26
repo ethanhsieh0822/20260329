@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>筷炒 | KUAI CHAO LOTTERY</title>
   <style>
-    /* 美術館色系 */
+    /* 美術館指定色系 */
     :root {
       --primary: #1f244d;   /* 深藍 */
       --secondary: #dfdacb; /* 米白 */
       --accent: #e63946;    /* 紅色 */
-      --overlay: rgba(31, 36, 77, 0.95);
+      --overlay: rgba(31, 36, 77, 0.96);
     }
 
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -18,8 +18,8 @@
     body {
       margin: 0; padding: 0;
       background-color: var(--primary);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      height: 100dvh; /* 解決各裝置瀏覽器 UI 遮擋問題 */
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      height: 100dvh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -27,115 +27,158 @@
       color: var(--primary);
     }
 
-    /* 集中式美術館卡片 */
+    /* 集中式美術館外框：改為彈性高度，確保大文字不溢出 */
     .museum-frame {
-      width: 90%;
-      max-width: 360px;
-      height: 88dvh;
-      max-height: 650px;
+      width: 92%;
+      max-width: 350px;
+      height: auto;
+      max-height: 92dvh;
       background-color: var(--secondary);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
       position: relative;
       display: flex;
       flex-direction: column;
-      padding: 25px;
+      padding: 20px;
+      border-radius: 4px;
     }
 
     /* 頂部標題 */
     .header {
       text-align: center;
-      margin-bottom: 15px;
-      flex-shrink: 0;
+      margin-bottom: 12px;
+      flex-shrink: 0; /* 絕不縮小 */
     }
-    .logo-img { width: 110px; mix-blend-mode: multiply; margin-bottom: 10px; }
-    .slogan { font-size: 14px; font-weight: 800; letter-spacing: 1.5px; margin: 0; }
+    .logo-img { width: 105px; height: auto; mix-blend-mode: multiply; margin-bottom: 6px; }
+    .slogan { font-size: 13px; font-weight: 800; letter-spacing: 1px; margin: 0; white-space: nowrap; }
 
-    /* 中央主舞台 */
+    /* 中央主舞台：負責彈性調配空間 */
     .main-stage {
       flex-grow: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+      min-height: 0; /* Flex 壓縮核心設定 */
+      margin: 10px 0;
     }
 
     .scene { display: none; width: 100%; flex-direction: column; align-items: center; text-align: center; }
     .active { display: flex; }
 
-    /* 入口圖片 */
+    /* 入口圖片：允許隨螢幕高度縮小 */
     .promo-img {
-      max-width: 85%; height: auto; border-radius: 4px; 
+      width: auto;
+      max-width: 80%;
+      height: auto;
+      max-height: 20vh; /* 限制在視窗高度的20%，防擠壓 */
+      object-fit: contain;
+      border-radius: 4px; 
       border: 2px solid var(--primary); 
       box-shadow: 4px 4px 0 rgba(31,36,77,0.1); 
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
-    /* 美術館按鈕 */
+    /* 按鈕基底：加入防爆字設定 */
     .action-btn {
-      width: 100%; padding: 18px 0; 
-      background-color: var(--primary); color: var(--secondary); 
-      border: none; font-size: 16px; font-weight: 900; letter-spacing: 4px; 
-      cursor: pointer; transition: 0.2s;
+      width: 100%; 
+      padding: 14px 10px; 
+      background-color: var(--primary); 
+      color: var(--secondary); 
+      border: none; 
+      font-size: 16px; 
+      font-weight: 900; 
+      letter-spacing: 2px; 
+      cursor: pointer; 
+      transition: background 0.2s, transform 0.1s;
+      white-space: nowrap; /* 強制不換行 */
+      text-overflow: ellipsis;
+      overflow: hidden;
+      border-radius: 2px;
     }
-    .action-btn:active { transform: scale(0.98); }
-    .action-btn.outline {
-      background-color: transparent; color: var(--primary);
-      border: 2px solid var(--primary); margin-top: 20px;
-    }
+    .action-btn:active { transform: scale(0.99); }
 
-    /* 轉盤設計：6等分交替 */
+    /* 轉盤設計：允許隨螢幕高度自動等比例縮小 */
     .wheel-box {
-      width: min(65vw, 240px); height: min(65vw, 240px);
-      position: relative; margin-bottom: 20px;
+      width: 45vw;
+      height: 45vw;
+      max-width: 220px;
+      max-height: 220px;
+      min-width: 160px;
+      min-height: 160px;
+      position: relative; 
+      margin-bottom: 15px;
+      flex-shrink: 1; /* 螢幕小時允許縮小 */
     }
     .wheel-main {
       width: 100%; height: 100%; border-radius: 50%;
-      border: 6px solid var(--primary); box-sizing: border-box;
+      border: 5px solid var(--primary); box-sizing: border-box;
       background: conic-gradient(
         var(--primary) 0deg 60deg, var(--secondary) 60deg 120deg, 
         var(--primary) 120deg 180deg, var(--secondary) 180deg 240deg, 
         var(--primary) 240deg 300deg, var(--secondary) 300deg 360deg
       );
-      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       transition: transform 4s cubic-bezier(0.15, 0, 0.15, 1);
     }
     .pointer {
-      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
       width: 0; height: 0; 
-      border-left: 18px solid transparent; border-right: 18px solid transparent;
-      border-top: 35px solid var(--accent); z-index: 10;
+      border-left: 15px solid transparent; border-right: 15px solid transparent;
+      border-top: 30px solid var(--accent); z-index: 10;
     }
     .wheel-center {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      width: 26px; height: 26px; background: var(--accent); border-radius: 50%; 
-      border: 4px solid var(--secondary);
+      width: 22px; height: 22px; background: var(--accent); border-radius: 50%; 
+      border: 3px solid var(--secondary);
     }
 
     /* 結果文字 */
     @keyframes textBlink { 50% { opacity: 0; } }
-    .res-title { color: var(--accent); font-size: 38px; font-weight: 900; letter-spacing: 4px; margin: 0 0 15px 0; }
-    .res-sub { font-size: 22px; font-weight: 900; line-height: 1.6; border-top: 3px solid var(--primary); border-bottom: 3px solid var(--primary); padding: 20px 0; margin: 0 10px; }
+    .res-title { color: var(--accent); font-size: 32px; font-weight: 900; letter-spacing: 2px; margin: 0 0 12px 0; white-space: nowrap; }
+    .res-sub { font-size: 20px; font-weight: 900; line-height: 1.5; border-top: 2px solid var(--primary); border-bottom: 2px solid var(--primary); padding: 15px 5px; margin: 0; width: 100%; }
 
     /* 底部社群 */
-    .footer { flex-shrink: 0; margin-top: 20px; display: flex; gap: 8px; }
-    .social-btn { flex: 1; padding: 12px 0; background: transparent; color: var(--primary); text-decoration: none; font-size: 11px; font-weight: 800; border: 1.5px solid var(--primary); text-align: center; }
+    .footer { flex-shrink: 0; margin-top: 15px; display: flex; gap: 8px; width: 100%; }
+    .social-btn { flex: 1; padding: 10px 0; background: transparent; color: var(--primary); text-decoration: none; font-size: 11px; font-weight: 800; border: 1.5px solid var(--primary); text-align: center; }
 
-    /* 條款彈窗 */
+    /* 條款彈窗背景 */
     .modal {
       display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: var(--overlay); z-index: 999;
-      justify-content: center; align-items: center;
+      justify-content: center; align-items: center; padding: 15px;
     }
+    /* 彈窗主體：寬度與內距優化 */
     .modal-inner {
-      background: var(--secondary); width: 85%; max-width: 300px; padding: 25px;
-      text-align: center; border: 1px solid white; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      background: var(--secondary); 
+      width: 100%;
+      max-width: 300px; 
+      padding: 20px;
+      text-align: center; 
+      border: 1px solid white; 
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      border-radius: 4px;
     }
-    .modal-inner h3 { margin-top: 0; font-size: 18px; margin-bottom: 12px; }
-    .modal-text { font-size: 14px; line-height: 1.6; text-align: justify; margin-bottom: 20px; font-weight: 600; }
+    .modal-inner h3 { margin-top: 0; font-size: 16px; margin-bottom: 10px; color: var(--primary); font-weight: 900; }
+    .modal-text { font-size: 13.5px; line-height: 1.5; text-align: justify; margin-bottom: 18px; font-weight: 600; color: var(--primary); }
     
-    .confirm-btn { width: 100%; padding: 15px 0; background: #ccc; color: #fff; border: none; font-weight: 900; letter-spacing: 2px; cursor: not-allowed; transition: 0.3s; }
+    /* 修正後的確認按鈕：防爆字防跑位 */
+    .confirm-btn { 
+      width: 100%; 
+      padding: 14px 5px; 
+      background: #bbbbbb; 
+      color: #ffffff; 
+      border: none; 
+      font-size: 15px; 
+      font-weight: 900; 
+      letter-spacing: 1.5px; 
+      cursor: not-allowed; 
+      transition: 0.2s;
+      white-space: nowrap; /* 核心修正：文字絕對不允許折行跑位 */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border-radius: 2px;
+    }
     .confirm-btn.active { background: var(--primary); color: var(--secondary); cursor: pointer; }
   </style>
 </head>
@@ -152,7 +195,7 @@
     <div class="scene active" id="entry">
       <img src="https://i.postimg.cc/G2QH57fh/5bi4.png" class="promo-img" alt="Promo">
       <button class="action-btn" onclick="openModal()">立即啟動</button>
-      <div style="margin-top: 15px; font-size: 11px; font-weight: 700; opacity: 0.7;">無限次數，挑戰您的極限<br>如有問題筷炒擁有最終解釋權</div>
+      <div style="margin-top: 12px; font-size: 11px; font-weight: 700; opacity: 0.7; white-space: nowrap;">每人每桌僅可參加一次 | 筷炒擁有最終解釋權</div>
     </div>
 
     <div class="scene" id="wheel">
@@ -161,19 +204,18 @@
         <div class="wheel-main" id="wheelBody"></div>
         <div class="wheel-center"></div>
       </div>
-      <div style="font-weight: 900; letter-spacing: 4px; font-size: 12px;">LUCK SEARCHING...</div>
+      <div style="font-weight: 900; letter-spacing: 3px; font-size: 11px;">LUCK SEARCHING...</div>
     </div>
 
     <div class="scene" id="result">
-      <div id="resultOutput"></div>
-      <button class="action-btn outline" onclick="resetToEntry()">再次抽取</button>
+      <div id="resultOutput" style="width: 100%;"></div>
     </div>
 
   </div>
 
   <div class="footer">
-    <a href="#" class="social-btn">FB</a>
-    <a href="#" class="social-btn">IG</a>
+    <a href="https://www.facebook.com/KUAICHAO.TAIPEI/photos" target="_blank" class="social-btn">FB</a>
+    <a href="https://www.instagram.com/kuaichao.taibei/" target="_blank" class="social-btn">IG</a>
   </div>
 </div>
 
@@ -181,24 +223,32 @@
   <div class="modal-inner">
     <h3>【活動約定】</h3>
     <div class="modal-text">
-      按下同意即代表參與本次抽取並接受結果。餐點已同步進入製作流程，結果產生後，原訂單內容恕不接受退換。優惠將於本次消費即時抵用。
+      按下同意即代表每桌參與乙次，並接受結果。餐點已同步進入製作流程，結果產生後，原訂單內容恕不接受退換。 優惠將於本次消費即時抵用。
     </div>
     <button class="confirm-btn" id="confirmBtn" disabled onclick="startDraw()">請稍候 (3s)</button>
   </div>
 </div>
 
 <script>
-  // 紀錄曾抽過的最高階級 (1:最好 -> 6:最差)
-  const RANK_KEY = 'kuaichao_history_rank';
+  // 單次鎖定 Key
+  const STORAGE_KEY = 'kuaichao_lotto_strict_v24';
   
-  // 獎項定義 (1~6 階)
+  // 精確獎項對應
   const PRIZE_MAP = {
-    1: { id: "3X", title: "中獎 / WIN", desc: "塔香炒蛤蠣<br>3 倍份量！" },
-    2: { id: "2X", title: "中獎 / WIN", desc: "塔香炒蛤蠣<br>雙倍份量！" },
-    3: { id: "150OFF", title: "中獎 / WIN", desc: "塔香炒蛤蠣<br>現折 150 元！" },
-    4: { id: "100OFF", title: "中獎 / WIN", desc: "塔香炒蛤蠣<br>現折 100 元！" },
-    5: { id: "50OFF", title: "中獎 / WIN", desc: "塔香炒蛤蠣<br>現折 50 元！" },
-    6: { id: "30OFF", title: "中獎 / WIN", desc: "塔香炒蛤蠣<br>現折 30 元！" }
+    "3X":     { title: "中獎 / WIN", desc: "塔香炒蛤蠣<br>3 倍份量！" },
+    "2X":     { title: "中獎 / WIN", desc: "塔香炒蛤蠣<br>雙倍份量！" },
+    "150OFF": { title: "中獎 / WIN", desc: "塔香炒蛤蠣<br>現折 150 元！" },
+    "100OFF": { title: "中獎 / WIN", desc: "塔香炒蛤蠣<br>現折 100 元！" },
+    "50OFF":  { title: "中獎 / WIN", desc: "塔香炒蛤蠣<br>現折 50 元！" },
+    "30OFF":  { title: "中獎 / WIN", desc: "塔香炒蛤蠣<br>現折 30 元！" }
+  };
+
+  window.onload = () => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if(saved) {
+      showScene('result');
+      renderResult(saved);
+    }
   };
 
   function openModal() {
@@ -207,6 +257,7 @@
     const btn = document.getElementById('confirmBtn');
     btn.disabled = true;
     btn.classList.remove('active');
+    btn.textContent = `請稍候 (${sec}s)`;
     
     const timer = setInterval(() => {
       sec--;
@@ -225,39 +276,25 @@
     document.getElementById('modal').style.display = 'none';
     showScene('wheel');
     
-    // 1. 取得自然機率下的結果
-    const rand = Math.random() * 10000; // 放大到 10000 方便計算小數點
-    let rawRank = 6;
+    // 精確機率配比
+    const rand = Math.random() * 10000; 
+    let res = "30OFF";
     
-    if (rand < 5) rawRank = 1;               // 0.05%
-    else if (rand < 505) rawRank = 2;        // 5%
-    else if (rand < 1505) rawRank = 3;       // 10% (現折150)
-    else if (rand < 3005) rawRank = 4;       // 15% (現折100)
-    else if (rand < 6505) rawRank = 5;       // 35% (現折50)
-    else rawRank = 6;                        // 34.95% (現折30)
+    if (rand < 5) res = "3X";             // 0.05%
+    else if (rand < 505) res = "2X";      // 5%
+    else if (rand < 1505) res = "150OFF"; // 10%
+    else if (rand < 3005) res = "100OFF"; // 15%
+    else if (rand < 6505) res = "50OFF";  // 35%
+    else res = "30OFF";                   // 34.95%
 
-    // 2. 越抽越差的降級邏輯防護
-    let prevRank = parseInt(localStorage.getItem(RANK_KEY) || '0');
-    let finalRank = rawRank;
-
-    // 如果曾經抽過，且這次抽到的獎項「大於等於」上次的獎項 (數字越小獎越好)
-    if (prevRank > 0) {
-        if (finalRank <= prevRank) {
-            // 強制降一級，最多降到第 6 級 (現折30元)
-            finalRank = Math.min(prevRank + 1, 6);
-        }
-    }
-
-    // 3. 轉盤動畫
     const rotate = 7200 + Math.floor(Math.random() * 360);
     setTimeout(() => {
       document.getElementById('wheelBody').style.transform = `rotate(${rotate}deg)`;
     }, 50);
 
-    // 4. 動畫結束後顯示結果並寫入紀錄
     setTimeout(() => {
-      localStorage.setItem(RANK_KEY, finalRank); // 儲存這次的階級作為下次的標準
-      renderResult(finalRank);
+      localStorage.setItem(STORAGE_KEY, res); 
+      renderResult(res);
       showScene('result');
     }, 4200);
   }
@@ -267,25 +304,13 @@
     document.getElementById(id).classList.add('active');
   }
 
-  function renderResult(rank) {
+  function renderResult(key) {
     const out = document.getElementById('resultOutput');
-    const prize = PRIZE_MAP[rank];
+    const prize = PRIZE_MAP[key] || PRIZE_MAP["30OFF"];
     out.innerHTML = `
       <div class="res-title" style="animation: textBlink 0.6s step-end infinite;">${prize.title}</div>
       <div class="res-sub">${prize.desc}</div>
     `;
-  }
-
-  // 重置回首頁以供再次抽取 (重置轉盤角度)
-  function resetToEntry() {
-    document.getElementById('wheelBody').style.transition = 'none';
-    document.getElementById('wheelBody').style.transform = 'rotate(0deg)';
-    
-    // 強制瀏覽器重繪，讓 transition 回來
-    void document.getElementById('wheelBody').offsetWidth; 
-    document.getElementById('wheelBody').style.transition = 'transform 4s cubic-bezier(0.15, 0, 0.15, 1)';
-    
-    showScene('entry');
   }
 </script>
 
